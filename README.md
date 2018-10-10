@@ -422,7 +422,7 @@ function escape(s) {
   );
 }
 ```
-首先参考这篇 <a target="_blank" href="http://localhost/blog/index.php/archives/9/">在script标签中谈谈HTML注释<!-</a>，我们有两个可控的注入点，一是`json(s)`二是`html(s)`，前者转义了`" \ /"`字符，后者对`< > " &`进行了HTML编码。如果我们让s为`<!--<script>`
+有两个可控的注入点，一是`json(s)`二是`html(s)`，前者转义了`" \ /"`字符，后者对`< > " &`进行了HTML编码。如果我们让s为`<!--<script>`
 Output
 ```html
 <script>var url = "<!--<script>"; // We'll use this later </script>
