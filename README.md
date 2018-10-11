@@ -249,7 +249,7 @@ Output
 ```
 
 <a name="a009"/></a>
-### Template (26)
+### Template (24)
 ```javascript
 function escape(s) {
   function htmlEscape(s) {
