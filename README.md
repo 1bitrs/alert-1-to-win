@@ -3,9 +3,10 @@
 挑战地址：https://alf.nu/alert1
 
 ### 我还能更短！
-### 所使用的浏览器 Opera 53.0.2907.99
-### 对应的浏览器标识 Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36 OPR/53.0.2907.99
-https://alf.nu/alert(1)#accesstoken=NoNIWDnsKLzlDa2hkyRw
+### 所使用的浏览器 Opera 56.0.3051.43 和 Firefox 52.6.0
+### 推荐使用Firefox，部分payload无法在Opera中执行
+### 我的链接
+    https://alf.nu/alert(1)#accesstoken=NoNIWDnsKLzlDa2hkyRw
 
 ### 目录
 > - [x]  <a href="#a001">Warmup (12)</a>
