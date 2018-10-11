@@ -16,7 +16,7 @@ https://alf.nu/alert(1)#accesstoken=NoNIWDnsKLzlDa2hkyRw
 > - [x]  <a href="#a006">DOM (32)</a>
 > - [x]  <a href="#a007">Callback (14)</a>
 > - [x]  <a href="#a008">Skandia (52)</a>
-> - [x]  <a href="#a009">Template (26)</a>
+> - [x]  <a href="#a009">Template (24)</a>
 > - [x]  <a href="#a010">JSON 2 (35)</a>
 > - [x]  <a href="#a011">Callback 2 (16)</a>
 > - [x]  <a href="#a012">Skandia 2 (137)</a>
@@ -290,9 +290,15 @@ Output
       </script>                                   
 ```
 2018-10-12更新
+26字符
 ```html
 \x3cstyle/onload=alert(1) 
 ```
+24字符，浏览器FireFox 52.6.0
+```html
+\x3csvg onload=alert(1) 
+```
+
 
 <a name="a010"/></a>
 ### JSON 2 (35)
