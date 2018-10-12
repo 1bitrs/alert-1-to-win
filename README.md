@@ -31,8 +31,8 @@
 > - [x]  <a href="#a020">K'Z'K (60)</a>
 > - [x]  <a href="#a021">K'Z'K (84)</a>
 > - [x]  <a href="#a022">K'Z'K (189)</a>
-> - [x]  <a href="#a023">Fruit (26)</a>
-> - [x]  <a href="#a024">Fruit 2 (26)</a>
+> - [x]  <a href="#a023">Fruit (23)</a>
+> - [x]  <a href="#a024">Fruit 2 (23)</a>
 > - [ ]  <a href="#a025">Fruit 3</a>
 > - [ ]  <a href="#a026">Capitals</a>
 > - [ ]  <a href="#a027">Quine</a>
@@ -592,14 +592,19 @@ Output
 <a name="a021"/></a>
 ### K'Z'K
 
+<a name="a022"/></a>
+### K'Z'K
 
-----------
+<a name="a023"/></a>
+### Fruit(23)
+```html
+<svg t onload=alert(1)>
+```
+
+<a name="a024"/></a>
+### Fruit 2 （23）
+```html
+<svg t onload=alert(1)>
+```
 
 
-<a name="a022"/></a>**K'Z'K**
-
-
-----------
-
-
-<a name="a023"/></a>**Fruit**
